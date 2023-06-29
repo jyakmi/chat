@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>간단한 채팅 웹 페이지</title>
+  <style>
+    #chatbox {
+      height: 300px;
+      overflow: scroll;
+    }
+  </style>
+  <script>
+    function sendMessage() {
+      var message = document.getElementById("message").value;
+      var chatbox = document.getElementById("chatbox");
+      var newMessage = document.createElement("p");
+      newMessage.innerText = message;
+      chatbox.appendChild(newMessage);
+      document.getElementById("message").value = "";
+    }
+  </script>
+</head>
+<body>
+  <h1>간단한 채팅 웹 페이지</h1>
+  <div id="chatbox"></div>
+  <input type="text" id="message" placeholder="메시지를 입력하세요">
+  <button onclick="sendMessage()">전송</button>
+</body>
+</html>
